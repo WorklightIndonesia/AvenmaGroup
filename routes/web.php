@@ -11,3 +11,13 @@ Route::get('/services', function () {
 
     return view('services.index', compact('services'));
 })->name('services.index');
+
+Route::redirect('/', '/id');
+
+Route::get('/id', function () {
+    return view('home', ['locale' => 'id']);
+})->name('home.id');
+
+Route::get('/en', function () {
+    return view('home', ['locale' => 'en']);
+})->name('home.en');
