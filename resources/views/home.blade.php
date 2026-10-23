@@ -79,25 +79,35 @@
 
 <header class="border-b border-slate-200 bg-white">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
-        <a href="{{ url('/' . $locale) }}"
-            class="text-2xl font-bold tracking-tight">
-            APFIANI<span class="font-normal text-slate-500"> GROUP</span>
+        <a href="{{ url('/' . $locale) }}" class="text-2xl font-bold tracking-tight">
+            APFIANI
+            <span class="font-normal text-[#C4A46A]"> 
+                GROUP
+            </span>
         </a>
 
         <div class="hidden items-center gap-7 text-base md:flex">
-            <a href="{{ url('/' . $locale) }}" class="font-semibold">
+            <a href="{{ $id ? '/id' : '/en' }}" class="font-semibold">
                 {{ $content['nav'][0] }}
             </a>
-            <a href="{{ url('/' . $locale . '/tentang') }}" class="text-slate-600 hover:text-black">
+
+            <a href="{{ $id ? '/id/tentang' : '/en/about' }}"
+            class="text-slate-600 hover:text-black">
                 {{ $content['nav'][1] }}
             </a>
-            <a href="#layanan-kami">
+
+            <a href="{{ $id ? '/id/layanan' : '/en/services' }}"
+            class="text-slate-600 hover:text-black">
                 {{ $content['nav'][2] }}
             </a>
-            <a href="{{ url('/' . $locale . ($id ? '/tim' : '/team')) }}" class="text-slate-600 hover:text-black">
+
+            <a href="{{ $id ? '/id/tim' : '/en/team' }}"
+            class="text-slate-600 hover:text-black">
                 {{ $content['nav'][3] }}
             </a>
-            <a href="{{ url('/' . $locale . ($id ? '/kontak' : '/contact')) }}" class="text-slate-600 hover:text-black">
+
+            <a href="{{ $id ? '/id#kontak' : '/en#kontak' }}"
+            class="text-slate-600 hover:text-black">
                 {{ $content['nav'][4] }}
             </a>
         </div>
@@ -156,7 +166,6 @@
     <section class="bg-[#FAF8F4]">
         <div class="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:gap-16 md:py-28 lg:px-8">
 
-            {{-- Left: Section heading --}}
             <div>
                 <p class="text-xs font-semibold tracking-[0.2em] text-[#9A7943]">
                     {{ $id ? 'TENTANG KAMI' : 'ABOUT US' }}
@@ -167,7 +176,6 @@
                 </h2>
             </div>
 
-            {{-- Right: Company introduction --}}
             <div>
                 <p class="text-lg leading-10 text-slate-600">
                     {{ $id
@@ -175,8 +183,9 @@
                         : 'Apfiani Group was founded by Apfiani Setiyanti, S.H., M.Kn., on March 3, 2025. She is a legal professional with experience at leading property companies in Jakarta, handling legal matters involving property, commercial business, corporate affairs, land, and licensing across Indonesia.' }}
                 </p>
 
-                <a href="{{ $id ? '/id/tentang' : '/en/about' }}" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
-                    Kenali Apfiani Group
+                <a href="{{ $id ? '/id/tentang' : '/en/about' }}"
+                class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
+                    {{ $id ? 'Kenali Apfiani Group' : 'Get to Know Apfiani Group' }}
                 </a>
             </div>
 
