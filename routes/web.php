@@ -21,3 +21,11 @@ Route::get('/id', function () {
 Route::get('/en', function () {
     return view('home', ['locale' => 'en']);
 })->name('home.en');
+
+Route::get('/id/tentang', function () {
+    return view('about', ['locale' => 'id']);
+})->name('about.id');
+
+Route::get('/en/about', function () {
+    return view('about', ['locale' => 'en']);
+})->name('about.en');
