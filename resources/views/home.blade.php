@@ -136,7 +136,7 @@
                     {{ $content['intro'] }}
                 </p>
     
-                <a href="#layanan-kami" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
+                <a href="#layanan-kami" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 mt-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
                     {{ $content['cta'] }}
                 </a>
             </div>
@@ -175,7 +175,7 @@
                         : 'Apfiani Group was founded by Apfiani Setiyanti, S.H., M.Kn., on March 3, 2025. She is a legal professional with experience at leading property companies in Jakarta, handling legal matters involving property, commercial business, corporate affairs, land, and licensing across Indonesia.' }}
                 </p>
 
-                <a href="{{ url('/' . $locale . ($id ? '/tentang' : '/about')) }}" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
+                <a href="{{ $id ? '/id/tentang' : '/en/about' }}" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
                     Kenali Apfiani Group
                 </a>
             </div>
