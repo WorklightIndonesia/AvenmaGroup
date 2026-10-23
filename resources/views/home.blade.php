@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="{{ $locale }}">
+<html lang="{{ $locale }}" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +91,7 @@
             <a href="{{ url('/' . $locale . '/tentang') }}" class="text-slate-600 hover:text-black">
                 {{ $content['nav'][1] }}
             </a>
-            <a href="{{ url('/' . $locale . ($id ? '/unit-bisnis' : '/businesses')) }}" class="text-slate-600 hover:text-black">
+            <a href="#layanan-kami">
                 {{ $content['nav'][2] }}
             </a>
             <a href="{{ url('/' . $locale . ($id ? '/tim' : '/team')) }}" class="text-slate-600 hover:text-black">
@@ -135,11 +135,10 @@
                 <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 md:text-lg">
                     {{ $content['intro'] }}
                 </p>
-                <a href="{{ url('/' . $locale . ($id ? '/unit-bisnis' : '/businesses')) }}"
-                class="mt-9 inline-flex items-center gap-3 rounded-md bg-[#C4A46A] px-7 py-4 text-base font-semibold text-[#17212D] shadow-sm transition hover:bg-[#D4B982] focus:outline-none focus:ring-2 focus:ring-[#C4A46A] focus:ring-offset-2 focus:ring-offset-slate-950">
+    
+                <a href="#layanan-kami" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
                     {{ $content['cta'] }}
                 </a>
-
             </div>
 
             <div class="hidden min-h-80 items-center justify-center border border-white/15 bg-white/[0.03] p-10 md:flex">
@@ -176,9 +175,8 @@
                         : 'Apfiani Group was founded by Apfiani Setiyanti, S.H., M.Kn., on March 3, 2025. She is a legal professional with experience at leading property companies in Jakarta, handling legal matters involving property, commercial business, corporate affairs, land, and licensing across Indonesia.' }}
                 </p>
 
-                <a href="{{ url('/' . $locale . ($id ? '/tentang' : '/about')) }}"
-                class="mt-7 inline-flex items-center rounded-md bg-[#C4A46A] px-6 py-3 text-base font-semibold text-[#17212D] shadow-sm transition hover:bg-[#D4B982] focus:outline-none focus:ring-2 focus:ring-[#9A7943] focus:ring-offset-2">
-                    {{ $id ? 'Kenali Apfiani Group' : 'Discover Apfiani Group' }}
+                <a href="{{ url('/' . $locale . ($id ? '/tentang' : '/about')) }}" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
+                    Kenali Apfiani Group
                 </a>
             </div>
 
@@ -187,7 +185,7 @@
 
 
     
-    <section class="bg-[#F0ECE5]">
+    <section id="layanan-kami" class="scroll-mt-6 bg-[#F0ECE5]">
         <div class="mx-auto max-w-7xl px-6 py-20 md:py-28 lg:px-8">
             <div class="max-w-2xl">
                 <p class="text-xs font-semibold tracking-[0.2em] text-[#9A7943]">
@@ -430,8 +428,7 @@
                 @endforeach
             </div>
 
-            <a href="{{ $id ? '/id/tim' : '/en/team' }}"
-            class="mt-8 inline-flex rounded-md border border-[#17212D] bg-[#C4A46A] px-6 py-3 text-base font-semibold black transition hover:bg-[#263548]">
+            <a href="{{ url('/' . $locale . ($id ? '/tim' : '/team')) }}" class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 mt-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
                 {{ $id ? 'Lihat Seluruh Tim' : 'Meet the Full Team' }}
             </a>
         </div>
@@ -460,13 +457,13 @@
                     <div class="logo-marquee">
                         <div class="logo-track">
                             @for ($i = 1; $i <= 8; $i++)
-                                <div class="flex h-20 w-40 shrink-0 items-center justify-center rounded-lg border border-stone-200 bg-white px-5 text-sm font-semibold tracking-wide text-slate-400">
+                                <div class="flex h-20 w-40 shrink-0 items-center justify-center rounded-lg border border-[#C4A46A] bg-white px-5 text-sm font-semibold tracking-wide text-slate-400">
                                     {{ $group['prefix'] }} {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
                                 </div>
                             @endfor
 
                             @for ($i = 1; $i <= 8; $i++)
-                                <div class="flex h-20 w-40 shrink-0 items-center justify-center rounded-lg border border-stone-200 bg-white px-5 text-sm font-semibold tracking-wide text-slate-400" aria-hidden="true">
+                                <div class="flex h-20 w-40 shrink-0 items-center justify-center rounded-lg border border-[#C4A46A] bg-white px-5 text-sm font-semibold tracking-wide text-slate-400" aria-hidden="true">
                                     {{ $group['prefix'] }} {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
                                 </div>
                             @endfor
@@ -494,11 +491,10 @@
                 </p>
             </div>
 
-            {{-- Replace the placeholder with the official WhatsApp number --}}
-            <a href="https://wa.me/62XXXXXXXXXX"
+            <a href="https://wa.me/62xxxxxxxxx"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex w-fit shrink-0 items-center justify-center rounded-md bg-[#C4A46A] px-7 py-4 text-base font-semibold text-[#17212D] shadow-sm transition hover:bg-[#D4B982] focus:outline-none focus:ring-2 focus:ring-[#9A7943] focus:ring-offset-2">
+            class="inline-flex items-center justify-center rounded-xl border-2 border-[#A78243] bg-[#C9A76B] px-8 py-4 text-lg font-semibold text-[#172235] shadow-[inset_0_0_0_3px_#FAF8F4] transition hover:bg-[#D4B77F]">
                 {{ $id ? 'Hubungi via WhatsApp' : 'Chat on WhatsApp' }}
             </a>
         </div>
